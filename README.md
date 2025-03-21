@@ -67,20 +67,3 @@ A API depende de um banco de dados MySQL que é tratado como um serviço externo
 
 ### 📌 Base de dados separada (*Backing Services - Database*)
 O banco de dados MySQL não está embutido na aplicação, permitindo que seja executado separadamente como um serviço gerenciado pelo Docker, seguindo o princípio de desacoplamento.
-
-
-## 🎨 Design Patterns Utilizados
-### 📌 Controller-Service-Repository
-A aplicação segue o padrão **Controller-Service-Repository**, garantindo uma separação clara entre camadas:
-- **Controller**: Responsável por receber requisições HTTP e retornos apropriados.
-- **Service**: Contém a lógica de negócio, evitando regras no Controller.
-- **Repository**: Responsável pelo acesso ao banco de dados via JPA.
-
-### 📌 DTO (Data Transfer Object)
-Utilizado para transferir dados entre camadas de forma estruturada, evitando a exposição direta de entidades do banco.
-
-### 📌 Singleton
-O padrão **Singleton** é aplicado em algumas configurações globais, garantindo que apenas uma instância de determinados componentes exista durante a execução da aplicação.
-
-### 📌 Strategy
-Aplicado para flexibilizar regras de negócio ao permitir a definição dinâmica de diferentes comportamentos, facilitando extensibilidade.
